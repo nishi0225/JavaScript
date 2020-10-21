@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test1-2</title>
+</head>
+<body>
+
+  <script>
+    'use strict'
+
+    const Todolist = ['掃除','買い物','散歩'];
+    let task = '初期値です';
+
+    const taskadd = () => {
+        //入力値を取得
+        const task = prompt('タスクを入力してください！');
+        alert('タスクが追加されました！');
+        prompt('「確認,追加,削除,終了」の４つのいずれかを入力してください！');
+
+        //配列に追加
+        Todolist.push(task);
+
+        //表示
+        console.log('==================');
+        console.log('現在持っているタスク一覧');
+        console.log('==================')
+        //追加された配列を表示
+        for (let i = 0; i < Todolist.length; i++) {
+        console.log(`${i}:${Todolist[i]}`);
+    }
+    }
+    while(task) {
+      taskadd();
+      }
+    
+    
+
+
+  </script>
+  
+
+
+
+</body>
+</html>

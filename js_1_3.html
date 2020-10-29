@@ -11,7 +11,7 @@
     'use strict'
 
     const Todolist = ['掃除','買い物','散歩'];
-    let task = '初期値です';
+    let task = '初期値';
 
     const taskadd = () => {
         //入力値を取得
@@ -21,7 +21,8 @@
 
         //配列に追加
         Todolist.push(task);
-
+    }
+    const taskShow = () => {
         //表示
         console.log('==================');
         console.log('現在持っているタスク一覧');
@@ -31,8 +32,12 @@
         console.log(`${i}:${Todolist[i]}`);
     }
     }
+
+    taskShow();
+    
     while(task) {
       taskadd();
+      taskShow();
       }
     
     

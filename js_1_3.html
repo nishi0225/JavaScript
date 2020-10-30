@@ -16,17 +16,17 @@
     const taskadd = () => {
         //入力値を取得
         const task = prompt('タスクを入力してください！');
-        alert('タスクが追加されました！');
-        prompt('「確認,追加,削除,終了」の４つのいずれかを入力してください！');
 
         //配列に追加
         Todolist.push(task);
+        alert('タスクが追加されました！');
     }
     const taskShow = () => {
         //表示
         console.log('==================');
         console.log('現在持っているタスク一覧');
         console.log('==================')
+        
         //追加された配列を表示
         for (let i = 0; i < Todolist.length; i++) {
         console.log(`${i}:${Todolist[i]}`);
@@ -38,10 +38,8 @@
     while(task) {
       taskadd();
       taskShow();
+      prompt('「確認,追加,削除,終了」の４つのいずれかを入力してください！');
       }
-    
-    
-
 
   </script>
   

@@ -10,7 +10,6 @@
 
     'use strict'
 
-
     //タスク一覧を作成
     const taskList = [];
 
@@ -20,23 +19,17 @@
       console.log('現在持っているタスク一覧');
       console.log('==================')
       
-      taskList.forEach((task,index) => {
-        const taskgenre = [];
-        Object.keys(task).forEach(key => {
-          taskgenre.push(task[key]);
-        });
-        const [content,genre] = taskgenre;
-        console.log(`${index}:[内容]${content},[ジャンル]${genre}`);
+        taskList.forEach((task, index) => {
+        console.log(`${index}:[内容]${task.content},[ジャンル]${task.genre}`);
       })
-
+    
     }
     // タスク追加処理
-    const taskAdd = (genre,content) => {
-      const newTask = {
-        genre:genre,
-        content:content,
-      }
-      taskList.push(newTask);
+        const taskAdd = (content,genre) => {
+        taskList.push({
+            content: content,
+            genre: genre,
+        });
     }
     //タスクを追加
     taskAdd('机を片付ける','掃除');

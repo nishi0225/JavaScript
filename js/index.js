@@ -8,16 +8,16 @@ const buzz = document.getElementById('Buzz');
 const textShow = (showText) => {
   const pElement = document.createElement('p');
   pElement.textContent = showText;
-  const output = document.getElementById('output');
-  output.appendChild(pElement);
+  const outPut = document.getElementById('output');
+  outPut.appendChild(pElement);
 }
 
 //整数値以外が入力された場合の処理
-const validation_error = () => {
+const validationError = () => {
   const error = document.createElement('p');
   error.textContent = '整数値を入力してください';
-  const output = document.getElementById('output');
-  output.appendChild(error);
+  const outPut = document.getElementById('output');
+  outPut.appendChild(error);
 }
 
 //入力値をリセット
@@ -29,9 +29,11 @@ const reset = () => {
 }
 //入力された値の計算
 const calc = (fizNum,buzNum) => {
-  const noText = "";
   reset();
-  if (Number.isInteger(Number(fizNum)) && Number.isInteger(Number(buzNum))) {
+  if (!Number.isInteger(Number(fizNum)) || !Number.isInteger(Number(buzNum)) || fizNum === '' || buzNum === '') {
+    reset();
+    validationError();
+  }else {
     for (let i = 1; i < 100; i++) {
       if (i % fizNum === 0 && i % buzNum === 0) {
         textShow(`FizzBuzz${i}`);
@@ -41,9 +43,6 @@ const calc = (fizNum,buzNum) => {
         textShow(`Buzz${i}`);
       }
     }
-  }
-  if (!Number.isInteger(Number(fizNum)) || !Number.isInteger(Number(buzNum)) || fizNum === noText || buzNum === noText) {
-    validation_error();
   }
 }
 

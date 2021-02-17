@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    'use strict'
+
+    //タスク一覧を作成
+    const taskList = [];
+
+    //一覧を表示
+    const taskShow = () => {
+      console.log('==================');
+      console.log('現在持っているタスク一覧');
+      console.log('==================')
+      
+        taskList.forEach((task, index) => {
+        console.log(`${index}:[内容]${task.content},[ジャンル]${task.genre}`);
+      })
+    
+    }
+    // タスク追加処理
+        const taskAdd = (content,genre) => {
+        taskList.push({
+            content: content,
+            genre: genre,
+        });
+    }
+    //タスクを追加
+    taskAdd('机を片付ける','掃除');
+    taskAdd('牛乳を買う','買い物');
+    taskAdd('散歩をする','運動');
+
+    //初期タスクを表示
+    taskShow();
+
+    //入力値を取得,追加
+    const adding_task = prompt('タスクを入力してください');
+    const adding_genre = prompt('ジャンルを入力してください');
+
+    taskAdd(adding_task,adding_genre);
+    alert('タスクを追加しました');
+    taskShow();
+    prompt('「確認、追加、削除、終了」の４つからいずれかを入力してください');
+
+
+
+  </script>
+  
+</body>
+</html>
